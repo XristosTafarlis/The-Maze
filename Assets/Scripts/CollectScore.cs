@@ -1,13 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class CollectScore : MonoBehaviour{
 
 	public AudioSource collectPoint;
+	public AudioClip collectBoost;
 
 	void OnTriggerEnter(Collider other){
-		collectPoint.Play();
+		if(gameObject.CompareTag("SpeedBoost") == true){
+			AudioSource.PlayClipAtPoint(collectBoost, transform.position);
+			Debug.Log("Not in else");
+		}else{
+			collectPoint.Play();
+			Debug.Log("In else");
+		}
 		Scoring.theScore += 1;
 		Destroy(gameObject);
     }
