@@ -1,3 +1,4 @@
 Assets/TextMesh Pro/*.* linguist-detectable=false
+Assets/Plugins/*.* linguist-detectable=false
 *.shader linguist-detectable=false
 *.cginc linguist-detectable=false
